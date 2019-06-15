@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Hex RBG Converter",
+  "version": "1.0",
+  "description": "Add a conversion function to console to convert between RBG and Hex Values",
+  "icons": {
+    "48": "icons/popup-48.png",
+    "96": "icons/popup-96.png"
+  },
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_icon": "icons/popup-48.png",
+    "default_title": "(Hex & RGB) Color Converter",
+    "default_popup": "popup/popup.html"
+  }
+}

@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="convertForm">
+      <div class="top">
+        <label for="hexInput">Hex Code:</label>
+        <input placeholder="FFF000" type="text" id="hexInput" />
+      </div>
+      <div class="switchButton">
+        <button id="convertHex">Hex to RGB</button>
+        <br />
+        <button id="convertRGB">RGB to RGB</button>
+      </div>
+      <div class="bottom">
+        <label for="redRGBInput">Red:</label>
+        <input
+          value="0"
+          placeholder="255"
+          type="number"
+          min="0"
+          max="255"
+          id="redRGBInput"
+        />
+        <label for="greenRGBInput">Green:</label>
+        <input
+          value="0"
+          placeholder="255"
+          type="number"
+          min="0"
+          max="255"
+          id="greenRGBInput"
+        />
+        <label for="blueRGBInput">Blue:</label>
+        <input
+          value="0"
+          placeholder="255"
+          type="number"
+          min="0"
+          max="255"
+          id="blueRGBInput"
+        />
+      </div>
+    </div>
+    <div id="error" class="hidden">
+      <p>Can't load the necessary scripts.</p>
+      <p>Refresh and try again.</p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

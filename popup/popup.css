@@ -1,0 +1,75 @@
+html {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(47, 121, 9, 1) 57%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html,
+body {
+  width: 100px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.hidden {
+  display: none;
+}
+
+label {
+  color: pink;
+}
+
+.top {
+  padding-top: 1em;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bottom {
+  margin: 1em auto;
+  text-align: center;
+}
+
+.switchButton {
+  margin: 1em auto;
+  text-align: center;
+}
+
+.bottom > label {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+input {
+  width: 6em;
+}
+
+button {
+  line-height: 2em;
+}
