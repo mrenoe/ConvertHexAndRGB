@@ -7,14 +7,22 @@
     <div id="convertForm">
       <div class="top">
         <label for="hexInput">Hex Code:</label>
-        <input placeholder="FFF000" type="text" id="hexInput" />
+        <input
+          placeholder="FFF000"
+          type="text"
+          id="hexInput"
+          pattern="[a-fA-F\d]+"
+        />
       </div>
       <div class="switchButton">
         <button id="convertHex">Hex to RGB</button>
         <br />
-        <button id="convertRGB">RGB to RGB</button>
+        <button id="convertRGB">RGB to Hex</button>
       </div>
       <div class="bottom">
+        <div id="rgbError" class="hidden">
+          RGB values must be between 0 and 255.
+        </div>
         <label for="redRGBInput">Red:</label>
         <input
           value="0"
@@ -43,10 +51,7 @@
           id="blueRGBInput"
         />
       </div>
-    </div>
-    <div id="error" class="hidden">
-      <p>Can't load the necessary scripts.</p>
-      <p>Refresh and try again.</p>
+      <div id="demo" class="bottom"></div>
     </div>
     <script src="popup.min.js"></script>
   </body>

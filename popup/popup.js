@@ -48,20 +48,66 @@ document.addEventListener('click', e => {
   //more annoying than it's worth.
   if (e.target.id == 'convertHex') {
     const input = document.querySelector('#hexInput');
-    input.value = input.value.replace(/[^A-Za-z0-9]+/g, '');
+
     if (input.value.length === 3 || input.value.length === 6) {
       const rgb = convertHexToRGB(input.value);
       document.querySelector('#redRGBInput').value = rgb.red;
       document.querySelector('#greenRGBInput').value = rgb.green;
       document.querySelector('#blueRGBInput').value = rgb.blue;
+      document.querySelector('#demo').style.backgroundColor =
+        'rgb(' + rgb.red + ',' + rgb.green + ',' + rgb.blue + ')';
     }
   } else if (e.target.id == 'convertRGB') {
     const red = document.querySelector('#redRGBInput').value;
     const green = document.querySelector('#greenRGBInput').value;
     const blue = document.querySelector('#blueRGBInput').value;
-    if (red.length > 0 && green.length > 0 && blue.length > 0) {
+    if (
+      red.length > 0 &&
+      red > 0 &&
+      red < 256 &&
+      green.length > 0 &&
+      green > 0 &&
+      green < 256 &&
+      blue.length > 0 &&
+      blue > 0 &&
+      blue < 256
+    ) {
       let hex = convertRGBToHex(parseInt(red), parseInt(green), parseInt(blue));
       document.querySelector('#hexInput').value = hex.toUpperCase();
+      document.querySelector('#demo').style.backgroundColor = '#' + hex;
+    }
+  }
+});
+
+document.addEventListener('keyup', e => {
+  if (e.target.id === 'hexInput') {
+    const input = document.querySelector('#hexInput');
+    input.value = input.value.replace(/[^a-fA-F\d]+/g, '');
+  } else {
+    var error = false;
+    var rgbInputs = [];
+    if (e.target.id === 'blueRGBInput') {
+      rgbInputs.push(document.querySelector('#blueRGBInput'));
+    } else if (e.target.id === 'redRGBInput') {
+      rgbInputs.push(document.querySelector('#redRGBInput'));
+    } else if (e.target.id === 'greenRGBInput') {
+      rgbInputs.push(document.querySelector('#greenRGBInput'));
+    }
+
+    rgbInputs.forEach(element => {
+      if (element.value < 0) {
+        error = true;
+        element.value = 0;
+      } else if (element.value > 255) {
+        error = true;
+        element.value = 255;
+      }
+    });
+    const errorEl = document.querySelector('#rgbError');
+    if (error === true) {
+      errorEl.classList.remove('hidden');
+    } else {
+      errorEl.classList.add('hidden');
     }
   }
 });

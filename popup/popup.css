@@ -4,7 +4,7 @@ html {
     90deg,
     rgba(2, 0, 36, 1) 0%,
     rgba(47, 121, 9, 1) 57%,
-    rgba(0, 212, 255, 1) 100%
+    rgba(100, 22, 255, 1) 100%
   );
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -41,6 +41,12 @@ ul {
   display: none;
 }
 
+#rgbError {
+  padding-bottom: 1em;
+  font-size: 13px;
+  color: #ffb3a7;
+}
+
 label {
   color: pink;
 }
@@ -72,4 +78,10 @@ input {
 
 button {
   line-height: 2em;
+}
+#demo {
+  width: 85px;
+  border: 1px solid pink;
+  height: 85px;
+  background-color: #fff;
 }
