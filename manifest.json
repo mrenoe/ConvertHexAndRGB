@@ -12,6 +12,5 @@
     "default_icon": "icons/popup-48.png",
     "default_title": "(Hex & RGB) Color Converter",
     "default_popup": "popup/popup.html"
-  },
-  "devtools_page": "devtools_page/devtools-page.html"
+  }
 }
