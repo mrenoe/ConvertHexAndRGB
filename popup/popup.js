@@ -29,15 +29,15 @@ function convertRGBToHex(red, green, blue) {
     hex3 = 0;
   hex1 = red.toString(16);
   if (hex1.length < 2) {
-    hex1 = hex1 + '' + hex1;
+    hex1 = '0' + hex1;
   }
   hex2 = green.toString(16);
   if (hex2.length < 2) {
-    hex2 = hex2 + '' + hex2;
+    hex2 = '0' + hex2;
   }
   hex3 = blue.toString(16);
   if (hex3.length < 2) {
-    hex3 = hex3 + '' + hex3;
+    hex3 = '0' + hex3;
   }
   return hex1 + '' + hex2 + '' + hex3;
 }
@@ -63,13 +63,13 @@ document.addEventListener('click', e => {
     const blue = document.querySelector('#blueRGBInput').value;
     if (
       red.length > 0 &&
-      red > 0 &&
+      red >= 0 &&
       red < 256 &&
       green.length > 0 &&
-      green > 0 &&
+      green >= 0 &&
       green < 256 &&
       blue.length > 0 &&
-      blue > 0 &&
+      blue >= 0 &&
       blue < 256
     ) {
       let hex = convertRGBToHex(parseInt(red), parseInt(green), parseInt(blue));
